@@ -8,6 +8,7 @@
 const char* ssid = "";
 const char* password =  "";
 const char* mqttServer = "";
+const char* mqttClient = "xbox_telematics";
 const int mqttPort = 1883;
 const char* mqttUser = "";
 const char* mqttPassword = "";
@@ -66,7 +67,7 @@ void setup() {
   while (!client.connected()) {
     Serial.println("Connecting to MQTT...");
  
-    if (client.connect("ESP32Client")) {
+    if (client.connect(mqttClient)) {
  
       Serial.println("connected");  
  
